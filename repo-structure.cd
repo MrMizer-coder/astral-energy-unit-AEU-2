@@ -1,0 +1,68 @@
+astral-energy/
+│
+├── core/
+│   ├── ledger/
+│   │   ├── aeu_ledger.ts            # canonical AEU ledger
+│   │   ├── balances.ts              # per-node balances
+│   │   ├── proofs.ts                # merkle proofs / ZK hooks
+│   │   └── index.ts
+│   ├── metering/
+│   │   ├── energy_capture.ts        # raw energy → AEU conversion
+│   │   ├── compute_meter.ts         # compute → AEU
+│   │   ├── storage_meter.ts         # storage → AEU
+│   │   └── index.ts
+│   └── index.ts
+│
+├── allocation/
+│   ├── emissions/
+│   │   ├── daily_emission.ts        # daily AEU emission model
+│   │   ├── epoch_model.ts           # Energy Epoch logic
+│   │   └── curves.ts                # emission curves
+│   ├── governance/
+│   │   ├── voting_power.ts          # AEU → governance weight
+│   │   ├── proposals.ts
+│   │   └── index.ts
+│   └── index.ts
+│
+├── services/
+│   ├── api/
+│   │   ├── rest/
+│   │   ├── graphql/
+│   │   └── index.ts
+│   ├── workers/
+│   │   ├── meter_worker.ts
+│   │   ├── settlement_worker.ts
+│   │   └── index.ts
+│   └── index.ts
+│
+├── contracts/
+│   ├── AEU.sol                      # ERC‑20‑like AEU token
+│   ├── EnergyLedger.sol             # on-chain settlement
+│   ├── Allocation.sol               # emission + epoch logic
+│   └── Governance.sol
+│
+├── integrations/
+│   ├── dashboard/
+│   │   ├── hooks.ts                 # ACC hooks
+│   │   ├── adapters.ts              # Dashboard → Energy API
+│   │   └── index.ts
+│   ├── astral-grid/
+│   │   ├── node_adapter.ts
+│   │   ├── workload_meter.ts
+│   │   └── index.ts
+│   └── index.ts
+│
+├── docs/
+│   ├── AEU_spec.md                  # AEU definition
+│   ├── allocation_model.md          # emissions + epochs
+│   ├── governance.md
+│   ├── settlement.md
+│   └── api_reference.md
+│
+├── tests/
+│   ├── core/
+│   ├── allocation/
+│   ├── contracts/
+│   └── integrations/
+│
+└── package.json
